@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Product, CartItem, Order, User, SiteContent, ToastNotification, SavedCard, PayoutAccount } from '../types';
+import { getSiteContent, updateSiteContent as updateFirestoreContent } from '../services/cmsService';
 
 // Default Mock Data for CMS
 const DEFAULT_CONTENT: SiteContent = {
@@ -99,12 +100,19 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     return saved ? JSON.parse(saved) : [];
   });
 
-  const [siteContent, setSiteContent] = useState<SiteContent>(() => {
-    const saved = localStorage.getItem('truvamate_content');
-    return saved ? JSON.parse(saved) : DEFAULT_CONTENT;
-  });
+  const [siteContent, setSiteContent] = useState<SiteContent>(DEFAULT_CONTENT);
 
   const [notifications, setNotifications] = useState<ToastNotification[]>([]);
+
+  // Load site content from Firestore on mount
+  useEffect(() => {
+    loadSiteContent();
+  }, []);
+
+  const loadSiteContent = async () => {
+    const content = await getSiteContent();
+    setSiteContent(content);
+  };
 
   useEffect(() => {
     localStorage.setItem('truvamate_cart', JSON.stringify(cart));
@@ -122,10 +130,6 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (user) localStorage.setItem('truvamate_user', JSON.stringify(user));
     else localStorage.removeItem('truvamate_user');
   }, [user]);
-
-  useEffect(() => {
-    localStorage.setItem('truvamate_content', JSON.stringify(siteContent));
-  }, [siteContent]);
 
   useEffect(() => {
     localStorage.setItem('truvamate_cards', JSON.stringify(savedCards));
@@ -241,9 +245,14 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     showToast('ออกจากระบบสำเร็จ', 'info');
   };
 
-  const updateSiteContent = (newContent: SiteContent) => {
+  const updateSiteContent = async (newContent: SiteContent) => {
     setSiteContent(newContent);
-    showToast('บันทึกการแก้ไขเว็บไซต์เรียบร้อย', 'success');
+    const result = await updateFirestoreContent(newContent);
+    if (result.success) {
+      showToast('บันทึกการแก้ไขเว็บไซต์เรียบร้อย', 'success');
+    } else {
+      showToast('เกิดข้อผิดพลาด: ' + result.error, 'error');
+    }
   };
 
   return (
