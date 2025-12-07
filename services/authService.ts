@@ -21,13 +21,16 @@ export const registerWithEmail = async (email: string, password: string, display
     await updateProfile(user, { displayName });
 
     // Create user document in Firestore
-    const userData: User = {
+    const userData: any = {
       id: user.uid,
       email: user.email || '',
       name: displayName,
-      avatar: user.photoURL || undefined,
       createdAt: new Date().toISOString()
     };
+
+    if (user.photoURL) {
+      userData.avatar = user.photoURL;
+    }
 
     await setDoc(doc(db, 'users', user.uid), userData);
 
@@ -64,13 +67,17 @@ export const loginWithGoogle = async () => {
     
     if (!userDoc.exists()) {
       // Create new user document
-      const userData: User = {
+      const userData: any = {
         id: user.uid,
         email: user.email || '',
         name: user.displayName || 'User',
-        avatar: user.photoURL || undefined,
         createdAt: new Date().toISOString()
       };
+      
+      if (user.photoURL) {
+        userData.avatar = user.photoURL;
+      }
+      
       await setDoc(doc(db, 'users', user.uid), userData);
       return { success: true, user: userData };
     }
@@ -92,13 +99,17 @@ export const loginWithFacebook = async () => {
     
     if (!userDoc.exists()) {
       // Create new user document
-      const userData: User = {
+      const userData: any = {
         id: user.uid,
         email: user.email || '',
         name: user.displayName || 'User',
-        avatar: user.photoURL || undefined,
         createdAt: new Date().toISOString()
       };
+      
+      if (user.photoURL) {
+        userData.avatar = user.photoURL;
+      }
+      
       await setDoc(doc(db, 'users', user.uid), userData);
       return { success: true, user: userData };
     }
