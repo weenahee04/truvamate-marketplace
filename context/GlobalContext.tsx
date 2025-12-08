@@ -9,7 +9,7 @@ const DEFAULT_CONTENT: SiteContent = {
     badge: 'OFFICIAL US IMPORTER',
     titleLine1: 'สินค้าอเมริกา',
     titleLine2: 'ส่งตรงถึงบ้านคุณ',
-    description: 'พบกับสินค้าแบรนด์ดังกว่า 10,000 รายการ และบริการซื้อ Lotto USA ที่เชื่อถือได้ที่สุด',
+    description: 'พบกับสินค้าแบรนด์ดังและสินค้าพิเศษจาก USA กว่า 10,000 รายการ บริการฝากซื้อที่เชื่อถือได้ที่สุด',
     backgroundImage: 'https://i.ibb.co/s9g0FvQd/3.png' // Default background
   },
   promoBanners: [
@@ -203,7 +203,7 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   // Order Logic
   const placeOrder = (order: Order) => {
     setOrders(prev => [order, ...prev]);
-    showToast('สั่งซื้อสำเร็จ!', 'success');
+    showToast('ฝากซื้อสำเร็จ!', 'success');
   };
 
   // Saved Cards Logic

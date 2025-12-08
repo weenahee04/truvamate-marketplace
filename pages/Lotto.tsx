@@ -61,7 +61,7 @@ export const Lotto: React.FC = () => {
 
   // Check for consent on mount
   useEffect(() => {
-    const hasConsented = localStorage.getItem('truvamate_lotto_consent');
+    const hasConsented = localStorage.getItem('truvamate_special_consent');
     if (!hasConsented) {
       setShowLegalConsent(true);
     }
@@ -76,7 +76,7 @@ export const Lotto: React.FC = () => {
   }, []);
 
   const handleLegalConsent = () => {
-    localStorage.setItem('truvamate_lotto_consent', 'true');
+    localStorage.setItem('truvamate_special_consent', 'true');
     setShowLegalConsent(false);
   };
 
@@ -151,7 +151,7 @@ export const Lotto: React.FC = () => {
       return;
     }
 
-    navigate('/checkout', { state: { source: 'lotto', tickets: tickets } });
+    navigate('/checkout', { state: { source: 'special-products', tickets: tickets } });
   };
 
   const currentRule = GAME_RULES[activeGame];
@@ -167,7 +167,7 @@ export const Lotto: React.FC = () => {
               <div className="bg-brand-gold p-6 text-center">
                  <AlertTriangle size={48} className="mx-auto mb-2 text-slate-900" />
                  <h2 className="text-2xl font-black text-slate-900 uppercase">ข้อตกลงการใช้งาน</h2>
-                 <p className="text-sm font-bold text-slate-800">Lotto USA Messenger Service</p>
+                 <p className="text-sm font-bold text-slate-800">สินค้าพิเศษ USA Messenger Service</p>
               </div>
 
               <div className="p-6 overflow-y-auto space-y-6">
@@ -207,7 +207,7 @@ export const Lotto: React.FC = () => {
                    <div>
                       <h3 className="font-bold text-slate-900">เงื่อนไขทางกฎหมาย</h3>
                       <p className="text-sm text-slate-600">
-                        Truvamate เป็นเพียงผู้ให้บริการ "ฝากซื้อ" (Messenger) ไม่ใช่เจ้ามือรับพนัน ท่านตกลงยอมรับเงื่อนไขการให้บริการและนโยบายความเป็นส่วนตัว
+                        Truvamate เป็นเพียงผู้ให้บริการ "ฝากซื้อ" (Messenger) สินค้าจากอเมริกา ไม่ใช่ผู้จัดจำหน่ายสลากหรือการพนันทุกชนิด ท่านตกลงยอมรับเงื่อนไขการให้บริการและนโยบายความเป็นส่วนตัว
                       </p>
                    </div>
                 </div>
@@ -469,8 +469,8 @@ export const Lotto: React.FC = () => {
                <div className="text-[10px] text-slate-400 mt-1 flex items-center gap-1 justify-center sm:justify-start">
                   * Price includes $5 USD Service Fee / Ticket
                </div>
-               <Link to="/lotto-legal" className="text-xs text-brand-blue hover:underline flex items-center gap-1 mt-2 justify-center sm:justify-start">
-                 <Scale size={12} /> อ่านข้อตกลงและกฎหมายการซื้อสลาก
+               <Link to="/special-products-legal" className="text-xs text-brand-blue hover:underline flex items-center gap-1 mt-2 justify-center sm:justify-start">
+                 <Scale size={12} /> อ่านข้อตกลงและเงื่อนไขการใช้บริการ
                </Link>
             </div>
             <div className="flex gap-4 w-full sm:w-auto">

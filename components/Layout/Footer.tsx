@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-white text-xl font-bold mb-4 uppercase">Truvamate</h3>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-              แพลตฟอร์มสั่งซื้อสินค้าจากอเมริกาและบริการฝากซื้อ Lotto USA อันดับ 1 
+              แพลตฟอร์มฝากซื้อสินค้าจากอเมริกาและสินค้าพิเศษจาก USA อันดับ 1 
               สินค้าแท้ 100% ส่งตรงถึงหน้าบ้านคุณ ด้วยระบบ Logistics มาตรฐานสากล
             </p>
             <div className="flex gap-4">
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-4">บริการลูกค้า</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/legal" className="hover:text-brand-gold transition-colors">ศูนย์ช่วยเหลือ</Link></li>
-              <li><Link to="/how-to-use" className="hover:text-brand-gold transition-colors">วิธีการสั่งซื้อ / ใช้งาน</Link></li>
+              <li><Link to="/how-to-use" className="hover:text-brand-gold transition-colors">วิธีการฝากซื้อ / ใช้งาน</Link></li>
               <li><Link to="/legal" className="hover:text-brand-gold transition-colors">การชำระเงิน</Link></li>
               <li><Link to="/legal" className="hover:text-brand-gold transition-colors">การจัดส่งสินค้า</Link></li>
               <li><Link to="/legal" className="hover:text-brand-gold transition-colors">นโยบายการคืนสินค้า</Link></li>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-4">หมวดยอดนิยม</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/lotto" className="hover:text-brand-gold transition-colors">Lotto USA (Powerball)</Link></li>
+              <li><Link to="/special-products" className="hover:text-brand-gold transition-colors">สินค้าพิเศษ USA</Link></li>
               <li><Link to="/category/fashion" className="hover:text-brand-gold transition-colors">รองเท้า Sneaker</Link></li>
               <li><Link to="/category/fashion" className="hover:text-brand-gold transition-colors">กระเป๋า Brand Name</Link></li>
               <li><Link to="/category/vitamins" className="hover:text-brand-gold transition-colors">วิตามิน USA</Link></li>
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 items-center">
             <Link to="/legal" className="hover:text-white">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white">Terms of Service</Link>
-            <Link to="/lotto-legal" className="text-brand-gold hover:text-white font-bold">Lotto Legal (กฎหมายสลาก)</Link>
+            <Link to="/special-products-legal" className="text-brand-gold hover:text-white font-bold">ข้อตกลงการใช้บริการ</Link>
             <Link to="/admin" className="hover:text-brand-gold flex items-center gap-1 opacity-50 hover:opacity-100 transition-opacity">
               <ShieldAlert size={12} /> Admin Only
             </Link>

@@ -104,7 +104,7 @@ export const Home: React.FC = () => {
                  className={`px-10 ${hasBg ? 'border-white text-white hover:bg-white hover:text-slate-900' : 'border-black text-black hover:bg-black hover:text-brand-gold'}`}
                  onClick={() => navigate('/how-to-use')}
               >
-                วิธีสั่งซื้อ
+                วิธีฝากซื้อ
               </Button>
             </div>
           </div>

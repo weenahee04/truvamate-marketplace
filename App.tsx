@@ -21,6 +21,10 @@ import { Legal } from './pages/Legal';
 import { Terms } from './pages/Terms';
 import { HowToUse } from './pages/HowToUse';
 import { LottoLegal } from './pages/LottoLegal';
+
+// Alias for better naming
+const SpecialProducts = Lotto;
+const SpecialProductsLegal = LottoLegal;
 import { GlobalProvider } from './context/GlobalContext';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -63,8 +67,10 @@ const App: React.FC = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/lotto" element={<Lotto />} />
-            <Route path="/lotto-legal" element={<LottoLegal />} />
+            <Route path="/special-products" element={<SpecialProducts />} />
+            <Route path="/lotto" element={<SpecialProducts />} />
+            <Route path="/special-products-legal" element={<SpecialProductsLegal />} />
+            <Route path="/lotto-legal" element={<SpecialProductsLegal />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/how-to-use" element={<HowToUse />} />

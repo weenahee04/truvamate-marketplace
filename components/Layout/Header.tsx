@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
         {/* Top Bar - Desktop Only */}
         <div className="bg-slate-900 text-xs py-1.5 border-b border-slate-800 hidden md:block">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-slate-300">
-            <span>USA Import Marketplace & Lotto Service</span>
+            <span>USA Import Marketplace & สินค้าพิเศษ</span>
             <div className="flex items-center gap-4">
               <Link to="/seller" className="hover:text-white transition-colors flex items-center gap-1">
                 <Store size={12} /> Seller Center
@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
               <li><Link to="/category/fashion" className="hover:text-brand-gold h-full flex items-center transition-colors text-white">แฟชั่น USA</Link></li>
               <li><Link to="/category/vitamins" className="hover:text-brand-gold h-full flex items-center transition-colors text-white">วิตามิน & อาหารเสริม</Link></li>
               <li><Link to="/category/electronics" className="hover:text-brand-gold h-full flex items-center transition-colors text-white">อิเล็กทรอนิกส์</Link></li>
-              <li><Link to="/lotto" className="text-brand-gold font-bold h-full flex items-center hover:text-yellow-200">LOTTO USA (Jackpot)</Link></li>
+              <li><Link to="/special-products" className="text-brand-gold font-bold h-full flex items-center hover:text-yellow-200">สินค้าพิเศษ USA</Link></li>
               <li><Link to="/category/flash-sale" className="hover:text-brand-gold h-full flex items-center transition-colors text-white">Flash Sale</Link></li>
             </ul>
           </div>

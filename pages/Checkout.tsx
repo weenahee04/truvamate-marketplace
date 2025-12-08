@@ -12,8 +12,8 @@ export const Checkout: React.FC = () => {
   const navigate = useNavigate();
   const { cart, placeOrder, clearCart, savedCards, addSavedCard } = useGlobal();
   
-  // Logic to handle Lotto Checkout vs Normal Cart Checkout
-  const isLotto = location.state?.source === 'lotto';
+  // Logic to handle Special Products Checkout vs Normal Cart Checkout
+  const isLotto = location.state?.source === 'special-products' || location.state?.source === 'lotto';
   const lottoTickets = location.state?.tickets || [];
   
   // Determine Items
@@ -73,11 +73,11 @@ export const Checkout: React.FC = () => {
         <div className="h-24 w-24 bg-brand-gold rounded-full flex items-center justify-center text-slate-900 mb-6 shadow-xl animate-bounce">
           <CheckCircle2 size={48} />
         </div>
-        <h1 className="text-4xl font-black text-slate-900 mb-2">สั่งซื้อสำเร็จ!</h1>
+        <h1 className="text-4xl font-black text-slate-900 mb-2">ฝากซื้อสำเร็จ!</h1>
         <p className="text-slate-600 mb-8 font-medium">ขอบคุณที่ไว้วางใจ Truvamate<br/>คุณสามารถตรวจสอบสถานะได้ที่หน้าบัญชีของฉัน</p>
         <div className="flex gap-4">
           <Link to="/profile">
-            <Button variant="outline">ดูรายการสั่งซื้อ</Button>
+            <Button variant="outline">ดูรายการฝากซื้อ</Button>
           </Link>
           <Link to="/">
             <Button>กลับสู่หน้าหลัก</Button>
@@ -372,7 +372,7 @@ export const Checkout: React.FC = () => {
                   <Button variant="ghost" onClick={() => setStep(1)} className="text-slate-500">ย้อนกลับ</Button>
                 )}
                 <div className={isLotto ? 'w-full flex justify-end' : ''}>
-                   <Button onClick={handleConfirmOrder} size="lg" className="px-8 font-bold shadow-lg">ยืนยันการสั่งซื้อ</Button>
+                   <Button onClick={handleConfirmOrder} size="lg" className="px-8 font-bold shadow-lg">ยืนยันการฝากซื้อ</Button>
                 </div>
               </div>
             </div>

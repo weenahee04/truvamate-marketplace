@@ -10,7 +10,7 @@ export const BottomNav: React.FC = () => {
   const navItems = [
     { icon: Home, label: 'หน้าแรก', path: '/' },
     { icon: Grid, label: 'หมวดหมู่', path: '/category' },
-    { icon: Ticket, label: 'Lotto', path: '/lotto' },
+    { icon: Ticket, label: 'สินค้าพิเศษ', path: '/special-products' },
     { icon: ShoppingCart, label: 'ตะกร้า', path: '/cart', badge: cart.length },
     { icon: User, label: 'บัญชี', path: '/profile' },
   ];
