@@ -21,6 +21,7 @@ import { Legal } from './pages/Legal';
 import { Terms } from './pages/Terms';
 import { HowToUse } from './pages/HowToUse';
 import { LottoLegal } from './pages/LottoLegal';
+import { LocationAnalytics } from './pages/LocationAnalytics';
 
 // Alias for better naming
 const SpecialProducts = Lotto;
@@ -82,6 +83,7 @@ const App: React.FC = () => {
 
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin/location" element={<LocationAnalytics />} />
             
             <Route path="*" element={<Home />} />
           </Routes>

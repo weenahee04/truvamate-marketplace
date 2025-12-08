@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Product, CartItem, Order, User, SiteContent, ToastNotification, SavedCard, PayoutAccount } from '../types';
 import { getSiteContent, updateSiteContent as updateFirestoreContent } from '../services/cmsService';
+import { getUserLocation, saveLocationData, getSavedLocation, logLocationAnalytics, type LocationData } from '../services/locationService';
 
 // Default Mock Data for CMS
 const DEFAULT_CONTENT: SiteContent = {
@@ -48,6 +49,8 @@ interface GlobalContextType {
   notifications: ToastNotification[];
   savedCards: SavedCard[];
   payoutAccounts: PayoutAccount[];
+  userLocation: LocationData | null;
+  isLoadingLocation: boolean;
   addToCart: (product: Product, quantity?: number, option?: string) => void;
   removeFromCart: (id: string) => void;
   updateCartQty: (id: string, delta: number) => void;
@@ -64,6 +67,7 @@ interface GlobalContextType {
   removeSavedCard: (id: string) => void;
   addPayoutAccount: (account: Omit<PayoutAccount, 'id'>) => void;
   removePayoutAccount: (id: string) => void;
+  refreshLocation: () => Promise<void>;
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -104,14 +108,45 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const [notifications, setNotifications] = useState<ToastNotification[]>([]);
 
+  const [userLocation, setUserLocation] = useState<LocationData | null>(() => {
+    return getSavedLocation();
+  });
+
+  const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+
   // Load site content from Firestore on mount
   useEffect(() => {
     loadSiteContent();
   }, []);
 
+  // Track user location on mount
+  useEffect(() => {
+    trackUserLocation();
+  }, []);
+
   const loadSiteContent = async () => {
     const content = await getSiteContent();
     setSiteContent(content);
+  };
+
+  const trackUserLocation = async () => {
+    setIsLoadingLocation(true);
+    try {
+      const location = await getUserLocation();
+      if (location) {
+        setUserLocation(location);
+        saveLocationData(location);
+        logLocationAnalytics(location);
+      }
+    } catch (error) {
+      console.error('Failed to track location:', error);
+    } finally {
+      setIsLoadingLocation(false);
+    }
+  };
+
+  const refreshLocation = async () => {
+    await trackUserLocation();
   };
 
   useEffect(() => {
@@ -281,7 +316,10 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       addSavedCard,
       removeSavedCard,
       addPayoutAccount,
-      removePayoutAccount
+      removePayoutAccount,
+      userLocation,
+      isLoadingLocation,
+      refreshLocation
     }}>
       {children}
     </GlobalContext.Provider>
