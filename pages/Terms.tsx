@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FileText, ShieldAlert, Scale, AlertTriangle, Copyright, Gavel, BookOpen } from 'lucide-react';
+import { SEO, SEOPresets } from '../components/SEO';
 
 export const Terms: React.FC = () => {
   useEffect(() => {
@@ -7,7 +8,9 @@ export const Terms: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-slate-50 min-h-screen py-12 px-4">
+    <>
+      <SEO {...SEOPresets.terms} />
+      <div className="bg-slate-50 min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         
         {/* Header */}
@@ -280,6 +283,7 @@ export const Terms: React.FC = () => {
 
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };

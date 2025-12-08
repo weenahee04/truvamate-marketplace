@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-brand-gold shadow-md text-slate-900 transition-all duration-300">
-        {/* Top Bar - Desktop Only */}
+        {/* Top Bar - Desktop */}
         <div className="bg-slate-900 text-xs py-1.5 border-b border-slate-800 hidden md:block">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-slate-300">
             <div className="flex items-center gap-3">
@@ -45,6 +45,19 @@ export const Header: React.FC = () => {
               <span className="text-slate-600">|</span>
               <button className="hover:text-white transition-colors">TH / EN</button>
             </div>
+          </div>
+        </div>
+
+        {/* Top Bar - Mobile */}
+        <div className="bg-slate-900 text-xs py-1 border-b border-slate-800 md:hidden">
+          <div className="px-4 flex justify-center items-center text-slate-400">
+            {userLocation ? (
+              <span className="flex items-center gap-1">
+                📍 {userLocation.city}, {userLocation.countryCode === 'TH' ? '🇹🇭' : userLocation.countryCode === 'US' ? '🇺🇸' : userLocation.countryCode}
+              </span>
+            ) : (
+              <span>USA Import Marketplace</span>
+            )}
           </div>
         </div>
 

@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { RefreshCw, Plus, Trash2, X, Check, Dna, Trophy, Calendar, Clock, ChevronDown, ChevronUp, Scale, LogIn, UserPlus, Lock, AlertTriangle, CheckCircle2, DollarSign } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useGlobal } from '../context/GlobalContext';
+import { SEO, SEOPresets } from '../components/SEO';
 
 interface Ticket {
   id: number;
@@ -157,9 +158,11 @@ export const Lotto: React.FC = () => {
   const currentRule = GAME_RULES[activeGame];
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-20">
-      
-      {/* Legal Consent Modal */}
+    <>
+      <SEO {...SEOPresets.specialProducts} />
+      <div className="bg-slate-50 min-h-screen pb-20">
+        
+        {/* Legal Consent Modal */}
       {showLegalConsent && (
         <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-slate-900/95 backdrop-blur-md animate-in fade-in duration-300">
            <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
@@ -518,6 +521,6 @@ export const Lotto: React.FC = () => {
         </div>
 
       </div>
-    </div>
+    </>
   );
 };

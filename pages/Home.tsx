@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { ArrowRight, Zap, ShieldCheck, Truck, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useGlobal } from '../context/GlobalContext';
+import { SEO, SEOPresets } from '../components/SEO';
 
 const MOCK_PRODUCTS = [
   { id: '1', title: 'Vitamin C 1000mg Kirkland Signature', priceUSD: 15, priceTHB: 590, originalPriceTHB: 890, image: 'https://picsum.photos/400/400?random=1', rating: 4.8, sold: 1200, isUSImport: true, category: 'Vitamins' },
@@ -64,9 +65,11 @@ export const Home: React.FC = () => {
   };
 
   return (
-    <div className="space-y-12 pb-20">
-      
-      {/* Hero Section - Editable Content */}
+    <>
+      <SEO {...SEOPresets.home} />
+      <div className="space-y-12 pb-20">
+        
+        {/* Hero Section - Editable Content */}
       <section className={`relative overflow-hidden transition-colors duration-500 ${hasBg ? 'bg-slate-900' : 'bg-brand-gold'}`}>
         
         {/* Background Image Logic */}
@@ -325,6 +328,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 };

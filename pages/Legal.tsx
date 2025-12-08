@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Shield, Lock, FileText, Scale } from 'lucide-react';
+import { SEO, SEOPresets } from '../components/SEO';
 
 export const Legal: React.FC = () => {
   useEffect(() => {
@@ -8,7 +9,9 @@ export const Legal: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-slate-50 min-h-screen py-12 px-4">
+    <>
+      <SEO {...SEOPresets.legal} />
+      <div className="bg-slate-50 min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         
         {/* Header */}

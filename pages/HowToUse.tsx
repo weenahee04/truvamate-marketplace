@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Search, CreditCard, Truck, Ticket, Dna, Receipt, Trophy, ArrowRight, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom';
+import { SEO, SEOPresets } from '../components/SEO';
 
 export const HowToUse: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'marketplace' | 'lotto'>('marketplace');
