@@ -33,7 +33,7 @@ const PAST_DRAWS = [
   { date: 'Oct 21, 2023', jackpot: '$340 Million', numbers: [10, 15, 21, 45, 60], special: 4, type: 'Powerball' },
 ];
 
-const TICKET_PRICE = 250; // THB (~$7 USD: $2 Ticket + $5 Service Fee)
+const TICKET_PRICE = 175; // THB (5 USD × 35 THB/USD)
 
 export const Lotto: React.FC = () => {
   const navigate = useNavigate();
