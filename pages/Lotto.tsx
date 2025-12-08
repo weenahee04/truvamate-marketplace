@@ -189,7 +189,7 @@ export const Lotto: React.FC = () => {
                    <div>
                       <h3 className="font-bold text-slate-900">ค่าบริการคงที่ 5 USD</h3>
                       <p className="text-sm text-slate-600 mb-2">
-                        ราคาบัตร 250 บาท รวมค่าตั๋วและค่าบริการ (Service Fee 5 USD) เรียบร้อยแล้ว
+                        ราคาบัตร 175 บาท รวมค่าตั๋วและค่าบริการ (Service Fee 5 USD) เรียบร้อยแล้ว
                       </p>
                       <ul className="text-xs text-slate-500 space-y-1 bg-slate-50 p-3 rounded border border-slate-100">
                          <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-green-500" /> ไม่มีค่าธรรมเนียมแอบแฝง</li>
