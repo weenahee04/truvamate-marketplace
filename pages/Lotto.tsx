@@ -164,7 +164,7 @@ export const Lotto: React.FC = () => {
         
         {/* Legal Consent Modal */}
       {showLegalConsent && (
-        <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-slate-900/95 backdrop-blur-md animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-900/95 backdrop-blur-md animate-in fade-in duration-300">
            <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
               {/* Header */}
               <div className="bg-brand-gold p-6 text-center">
@@ -231,7 +231,7 @@ export const Lotto: React.FC = () => {
 
       {/* Login Required Modal */}
       {showLoginPrompt && (
-        <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[900] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden text-center p-6 md:p-8">
             <div className="h-16 w-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-navy">
               <Lock size={32} />
@@ -267,7 +267,7 @@ export const Lotto: React.FC = () => {
 
       {/* Number Selector Modal - Full Screen on Mobile */}
       {isSelectorOpen && (
-        <div className="fixed inset-0 z-[200] flex items-end md:items-center justify-center bg-slate-900/90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[800] flex items-end md:items-center justify-center bg-slate-900/90 backdrop-blur-sm">
           <div className="bg-white w-full h-full md:h-auto md:max-w-3xl md:max-h-[90vh] md:rounded-2xl overflow-hidden flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-300 md:fade-in md:zoom-in">
             {/* Modal Header */}
             <div className="p-4 md:p-6 border-b border-slate-100 flex justify-between items-center bg-brand-gold shrink-0">

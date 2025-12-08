@@ -113,7 +113,7 @@ export const Login: React.FC = () => {
       
       {/* Reset Password Modal */}
       {showResetPassword && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[900] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden">
             <div className="bg-brand-navy p-4 flex justify-between items-center">
               <h3 className="text-white font-bold flex items-center gap-2">
@@ -158,7 +158,7 @@ export const Login: React.FC = () => {
       
       {/* Terms & Conditions Modal */}
       {showTermsModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[900] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
             <div className="bg-brand-navy p-4 flex justify-between items-center shrink-0">
               <h3 className="text-white font-bold flex items-center gap-2">
