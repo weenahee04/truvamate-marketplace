@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
                 <>
                   <span className="text-slate-600">|</span>
                   <span className="flex items-center gap-1 text-slate-400">
-                    📍 {userLocation.city}, {userLocation.countryCode === 'TH' ? '🇹🇭' : userLocation.countryCode === 'US' ? '🇺🇸' : userLocation.countryCode}
+                    📍 {userLocation.city}, {userLocation.regionName} {userLocation.countryCode === 'TH' ? '🇹🇭' : userLocation.countryCode === 'US' ? '🇺🇸' : `(${userLocation.countryCode})`}
                   </span>
                 </>
               )}
