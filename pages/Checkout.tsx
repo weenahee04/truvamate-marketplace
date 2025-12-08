@@ -74,7 +74,12 @@ export const Checkout: React.FC = () => {
           <CheckCircle2 size={48} />
         </div>
         <h1 className="text-4xl font-black text-slate-900 mb-2">ฝากซื้อสำเร็จ!</h1>
-        <p className="text-slate-600 mb-8 font-medium">ขอบคุณที่ไว้วางใจ Truvamate<br/>คุณสามารถตรวจสอบสถานะได้ที่หน้าบัญชีของฉัน</p>
+        <p className="text-slate-600 mb-2 font-medium">ขอบคุณที่ไว้วางใจ Truvamate</p>
+        <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 mb-8 max-w-md">
+          <p className="text-slate-800 font-semibold mb-2">เราจะส่ง Email ยืนยันการฝากซื้อให้คุณภายใน 24 ชั่วโมง</p>
+          <p className="text-sm text-slate-600">กรุณาตรวจสอบอีเมลของคุณเพื่อรับข้อมูลการสั่งซื้อและการติดตามสถานะ</p>
+        </div>
+        <p className="text-slate-600 mb-8 text-sm">คุณสามารถตรวจสอบสถานะได้ที่หน้าบัญชีของฉัน</p>
         <div className="flex gap-4">
           <Link to="/profile">
             <Button variant="outline">ดูรายการฝากซื้อ</Button>
