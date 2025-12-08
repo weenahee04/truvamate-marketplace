@@ -55,13 +55,13 @@ export const HowToUse: React.FC = () => {
     {
       id: 3,
       title: 'ยืนยันคำสั่งซื้อ',
-      desc: 'ชำระเงินค่าบริการฝากซื้อ (150 บาท/ใบ) เราจะดำเนินการซื้อสลากจริงที่ตัวแทนจำหน่ายใน USA',
+      desc: 'ชำระเงินค่าบริการฝากซื้อ (250 บาท/ใบ) เราจะดำเนินการซื้อสินค้าพิเศษที่ตัวแทนจำหน่ายใน USA',
       icon: CheckCircle2
     },
     {
       id: 4,
-      title: 'ตรวจสอบสลาก',
-      desc: 'เจ้าหน้าที่จะสแกนใบสลากตัวจริงเข้าระบบ ท่านสามารถดูรูปสลากได้ที่เมนู "สลากของฉัน" ก่อนเวลาผลออก',
+      title: 'ตรวจสอบสินค้า',
+      desc: 'เจ้าหน้าที่จะสแกนหลักฐานการซื้อเข้าระบบ ท่านสามารถดูรูปหลักฐานได้ที่เมนู "สินค้าของฉัน" ก่อนวันออกผล',
       icon: Receipt
     }
   ];
@@ -75,7 +75,7 @@ export const HowToUse: React.FC = () => {
           วิธีการใช้งาน <span className="text-brand-gold bg-slate-900 px-2 rounded inline-block transform -skew-x-6">Truvamate</span>
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-          แพลตฟอร์มช้อปปิ้งสินค้าอเมริกาและบริการฝากซื้อ Lotto USA ที่ง่ายและปลอดภัยที่สุด เริ่มต้นใช้งานได้ใน 4 ขั้นตอน
+          แพลตฟอร์มช้อปปิ้งสินค้าอเมริกาและบริการฝากซื้อสินค้าพิเศษที่ง่ายและปลอดภัยที่สุด เริ่มต้นใช้งานได้ใน 4 ขั้นตอน
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export const HowToUse: React.FC = () => {
           onClick={() => setActiveTab('lotto')}
           className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full text-sm font-bold relative z-10 transition-colors ${activeTab === 'lotto' ? 'text-brand-gold' : 'text-slate-500 hover:text-slate-900'}`}
         >
-          <Ticket size={18} /> ซื้อ Lotto USA
+          <Ticket size={18} /> ฝากซื้อสินค้าพิเศษ
         </button>
       </div>
 

@@ -87,7 +87,7 @@ export const Terms: React.FC = () => {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <AlertTriangle className="text-brand-gold" size={24} />
-              <h2 className="text-xl md:text-2xl font-bold text-slate-900">4. ข้อกำหนดบริการ Lotto USA (Messenger Service)</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900">4. ข้อกำหนดบริการสินค้าพิเศษ USA (Messenger Service)</h2>
             </div>
             <p className="mb-4 text-slate-600 bg-yellow-50 p-4 rounded border-l-4 border-brand-gold">
               <strong>คำเตือน:</strong> Truvamate เป็นเพียงผู้ให้บริการ "รับฝากซื้อ" (Messenger/Courier Service) เท่านั้น เราไม่ใช่เจ้ามือรับพนัน ไม่ใช่ผู้ออกรางวัล และไม่มีส่วนเกี่ยวข้องกับกองสลากรัฐบาลสหรัฐฯ (Official State Lotteries)

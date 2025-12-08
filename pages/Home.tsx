@@ -307,7 +307,7 @@ export const Home: React.FC = () => {
               <div className="inline-block bg-black text-brand-gold px-3 py-1 text-xs font-bold tracking-widest uppercase mb-2">Jackpot Alert</div>
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">US Powerball & Mega Millions</h2>
               <p className="text-slate-800 font-medium max-w-lg text-lg">
-                ลุ้นรางวัลแจ็กพอตระดับโลกได้แล้ววันนี้ บริการฝากซื้อสลากกินแบ่งจากตัวแทนที่ได้รับอนุญาตในสหรัฐฯ
+                ลุ้นรางวัลแจ็กพอตระดับโลกได้แล้ววันนี้ บริการฝากซื้อสินค้าพิเศษจากตัวแทนที่ได้รับอนุญาตในสหรัฐฯ
               </p>
               <div className="pt-4">
                  <Button size="lg" variant="secondary" onClick={() => navigate('/lotto')} className="shadow-lg">เลือกเลขของคุณ</Button>

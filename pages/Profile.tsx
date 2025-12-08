@@ -317,7 +317,7 @@ export const Profile: React.FC = () => {
               onClick={() => setActiveTab('lotto')}
               className={`w-full flex items-center gap-3 px-4 py-3 font-medium border-l-4 transition-colors ${activeTab === 'lotto' ? 'bg-brand-navy/5 text-brand-navy border-brand-navy' : 'text-slate-600 hover:bg-slate-50 border-transparent'}`}
             >
-              <Ticket size={18} /> สลากของฉัน
+              <Ticket size={18} /> สินค้าพิเศษของฉัน
             </button>
              <button 
               onClick={() => setActiveTab('wallet')}
@@ -393,15 +393,15 @@ export const Profile: React.FC = () => {
               <>
                  <div className="p-6 border-b border-slate-100 flex justify-between items-center">
                   <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <Ticket className="text-brand-gold" /> สลากของฉัน
-                  </h1>
-                  <Button size="sm" onClick={() => navigate('/lotto')}>ซื้อสลากเพิ่ม</Button>
+                    <Ticket className="text-brand-gold" /> สินค้าพิเศษของฉัน
+                  </h3>
+                  <Button size="sm" onClick={() => navigate('/special-products')}>ฝากซื้อเพิ่ม</Button>
                 </div>
                 <div className="p-6 space-y-4">
                    {lottoOrders.length === 0 ? (
                     <div className="text-center py-12">
                       <Dna size={48} className="mx-auto text-slate-300 mb-4" />
-                      <p className="text-slate-500">คุณยังไม่มีสลากในครอบครอง</p>
+                      <p className="text-slate-500">คุณยังไม่มีสินค้าพิเศษในครอบครอง</p>
                     </div>
                   ) : (
                     lottoOrders.flatMap(order => order.items).map((ticket: any, i: number) => (
@@ -426,7 +426,7 @@ export const Profile: React.FC = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <Button size="sm" variant="outline" onClick={() => setSelectedTicket({...ticket, orderId: 'ORD-LOTO'})}>ดูใบสลากจริง</Button>
+                            <Button size="sm" variant="outline" onClick={() => setSelectedTicket({...ticket, orderId: 'ORD-LOTO'})}>ดูหลักฐานการซื้อ</Button>
                           </div>
                         </div>
                       </div>

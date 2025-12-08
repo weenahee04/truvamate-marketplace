@@ -15,7 +15,7 @@ const DEFAULT_CONTENT: SiteContent = {
     badge: 'OFFICIAL US IMPORTER',
     titleLine1: 'สินค้าอเมริกา',
     titleLine2: 'ส่งตรงถึงบ้านคุณ',
-    description: 'พบกับสินค้าแบรนด์ดังกว่า 10,000 รายการ และสินค้าพิเศษจาก USA ที่เชื่อถือได้ที่สุด',
+    description: 'พบกับสินค้าแบรนด์ดังและสินค้าพิเศษนำเข้าจาก USA กว่า 10,000 รายการ บริการฝากซื้อที่เชื่อถือได้',
     backgroundImage: 'https://i.ibb.co/s9g0FvQd/3.png'
   },
   promoBanners: [

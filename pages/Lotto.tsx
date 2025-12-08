@@ -194,7 +194,7 @@ export const Lotto: React.FC = () => {
                       <ul className="text-xs text-slate-500 space-y-1 bg-slate-50 p-3 rounded border border-slate-100">
                          <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-green-500" /> ไม่มีค่าธรรมเนียมแอบแฝง</li>
                          <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-green-500" /> ไม่หักเปอร์เซ็นต์เงินรางวัล</li>
-                         <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-green-500" /> สลากตัวจริงเป็นกรรมสิทธิ์ของท่าน</li>
+                         <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-green-500" /> สินค้าเป็นกรรมสิทธิ์ของท่าน 100%</li>
                       </ul>
                    </div>
                 </div>
@@ -207,7 +207,7 @@ export const Lotto: React.FC = () => {
                    <div>
                       <h3 className="font-bold text-slate-900">เงื่อนไขทางกฎหมาย</h3>
                       <p className="text-sm text-slate-600">
-                        Truvamate เป็นเพียงผู้ให้บริการ "ฝากซื้อ" (Messenger) สินค้าจากอเมริกา ไม่ใช่ผู้จัดจำหน่ายสลากหรือการพนันทุกชนิด ท่านตกลงยอมรับเงื่อนไขการให้บริการและนโยบายความเป็นส่วนตัว
+                        Truvamate เป็นเพียงผู้ให้บริการ "ฝากซื้อ" (Messenger) สินค้าพิเศษจากอเมริกา ไม่ใช่ผู้จัดจำหน่ายหรือจัดการสินค้าโดยตรง ท่านตกลงยอมรับเงื่อนไขการให้บริการและนโยบายความเป็นส่วนตัว
                       </p>
                    </div>
                 </div>
@@ -235,7 +235,7 @@ export const Lotto: React.FC = () => {
             </div>
             <h3 className="text-xl font-black text-slate-900 mb-2">กรุณาเข้าสู่ระบบ</h3>
             <p className="text-slate-600 mb-6 text-sm">
-              เพื่อความปลอดภัยในการบันทึกความเป็นเจ้าของสลากและสิทธิในการรับรางวัล กรุณาเข้าสู่ระบบก่อนทำรายการ
+              เพื่อความปลอดภัยในการบันทึกความเป็นเจ้าของสินค้าและสิทธิในการรับสินค้า กรุณาเข้าสู่ระบบก่อนทำรายการ
             </p>
             <div className="space-y-3">
               <Button 
