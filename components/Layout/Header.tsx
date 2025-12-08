@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const { cart, user, isAuthenticated, logout } = useGlobal();
+  const { cart, user, isAuthenticated, logout, userLocation } = useGlobal();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,17 @@ export const Header: React.FC = () => {
         {/* Top Bar - Desktop Only */}
         <div className="bg-slate-900 text-xs py-1.5 border-b border-slate-800 hidden md:block">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-slate-300">
-            <span>USA Import Marketplace & สินค้าพิเศษ</span>
+            <div className="flex items-center gap-3">
+              <span>USA Import Marketplace & สินค้าพิเศษ</span>
+              {userLocation && (
+                <>
+                  <span className="text-slate-600">|</span>
+                  <span className="flex items-center gap-1 text-slate-400">
+                    📍 {userLocation.city}, {userLocation.countryCode === 'TH' ? '🇹🇭' : userLocation.countryCode === 'US' ? '🇺🇸' : userLocation.countryCode}
+                  </span>
+                </>
+              )}
+            </div>
             <div className="flex items-center gap-4">
               <Link to="/seller" className="hover:text-white transition-colors flex items-center gap-1">
                 <Store size={12} /> Seller Center
