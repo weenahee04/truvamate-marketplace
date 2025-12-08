@@ -21,7 +21,7 @@ export interface LocationData {
  */
 export async function getUserLocation(): Promise<LocationData | null> {
   try {
-    const response = await fetch('http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,query');
+    const response = await fetch('https://ipapi.co/json/');
     
     if (!response.ok) {
       throw new Error('Failed to fetch location');
@@ -29,23 +29,23 @@ export async function getUserLocation(): Promise<LocationData | null> {
 
     const data = await response.json();
 
-    if (data.status === 'fail') {
-      console.error('Location API error:', data.message);
+    if (data.error) {
+      console.error('Location API error:', data.reason);
       return null;
     }
 
     const locationData: LocationData = {
-      ip: data.query,
-      country: data.country,
-      countryCode: data.countryCode,
-      region: data.region,
-      regionName: data.regionName,
+      ip: data.ip,
+      country: data.country_name,
+      countryCode: data.country_code,
+      region: data.region_code,
+      regionName: data.region,
       city: data.city,
-      zip: data.zip,
-      lat: data.lat,
-      lon: data.lon,
+      zip: data.postal,
+      lat: data.latitude,
+      lon: data.longitude,
       timezone: data.timezone,
-      isp: data.isp,
+      isp: data.org,
       timestamp: new Date().toISOString()
     };
 
