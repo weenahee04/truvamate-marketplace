@@ -392,7 +392,7 @@ export const Profile: React.FC = () => {
             {activeTab === 'lotto' && (
               <>
                  <div className="p-6 border-b border-slate-100 flex justify-between items-center">
-                  <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                     <Ticket className="text-brand-gold" /> สินค้าพิเศษของฉัน
                   </h3>
                   <Button size="sm" onClick={() => navigate('/special-products')}>ฝากซื้อเพิ่ม</Button>
