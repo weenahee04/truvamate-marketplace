@@ -6,7 +6,7 @@ import {
   CreditCard, FileText, Camera, HardDrive, MapPin, Package, Bell,
   LogOut, ChevronDown, ChevronRight, Eye, Clock, CheckCircle, AlertTriangle,
   Wallet, ArrowUpRight, ArrowDownRight, Activity, Target, Award, Zap,
-  Globe, Smartphone, Monitor, Filter, Download, RefreshCw
+  Globe, Smartphone, Monitor, Filter, Download, RefreshCw, ScanLine
 } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, ComposedChart } from 'recharts';
 
@@ -135,7 +135,8 @@ const MENU_SECTIONS = [
     items: [
       { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12' },
       { name: 'รูปตั๋ว (Google Photos)', icon: Camera, path: '/admin/photo-upload', badge: null },
-      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: 'New' },
+      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: null },
+      { name: 'OCR สแกนตั๋ว', icon: ScanLine, path: '/admin/ocr-scanner', badge: 'New' },
     ]
   },
   {

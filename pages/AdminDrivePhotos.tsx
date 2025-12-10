@@ -4,7 +4,7 @@ import {
   HardDrive, Search, RefreshCw, Image, ExternalLink, Copy, CheckCircle, 
   AlertCircle, Folder, Download, BarChart3, Home, Camera, Ticket, Users, 
   Wallet, MapPin, CreditCard, DollarSign, Settings, ChevronRight, Clock, 
-  FolderOpen, Key, Link2, XCircle, Grid, List
+  FolderOpen, Key, Link2, XCircle, Grid, List, ScanLine
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { googleDriveService, TicketPhoto } from '../services/googleDrive';
@@ -23,7 +23,8 @@ const MENU_SECTIONS = [
     items: [
       { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12' },
       { name: 'รูปตั๋ว (Google Photos)', icon: Camera, path: '/admin/photo-upload', badge: null },
-      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: 'New', isActive: true },
+      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: null },
+      { name: 'OCR สแกนตั๋ว', icon: ScanLine, path: '/admin/ocr-scanner', badge: 'New' },
     ]
   },
   {
@@ -174,7 +175,7 @@ const AdminDrivePhotos: React.FC = () => {
               )}
               <div className="space-y-1 px-3">
                 {section.items.map((item, itemIndex) => {
-                  const isActive = item.isActive || location.pathname === item.path;
+                  const isActive = (item as any).isActive || location.pathname === item.path;
                   const Icon = item.icon;
                   return (
                     <Link

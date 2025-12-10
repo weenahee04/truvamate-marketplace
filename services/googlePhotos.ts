@@ -294,6 +294,39 @@ class GooglePhotosService {
   isConnected(): boolean {
     return !!(this.albumId && this.accessToken);
   }
+
+  /**
+   * ดึงรูปตั๋วทั้งหมด (alias for getRecentPhotos)
+   */
+  async getTicketPhotos(limit: number = 50): Promise<TicketPhoto[]> {
+    return this.getRecentPhotos(limit);
+  }
+
+  /**
+   * ค้นหารูปตั๋วด้วยเลขออเดอร์
+   */
+  async searchByOrderNumber(orderNumber: string): Promise<TicketPhoto[]> {
+    try {
+      const photos = await this.getAlbumPhotos();
+      
+      const matches = photos.filter((photo) => 
+        photo.filename.toLowerCase().includes(orderNumber.toLowerCase())
+      );
+
+      return matches.map((photo, index) => ({
+        ticketNumber: this.extractTicketNumber(photo.filename) || `รูปที่ ${index + 1}`,
+        orderNumber: this.extractOrderNumber(photo.filename) || orderNumber,
+        photoUrl: `${photo.baseUrl}=w2048-h2048`,
+        thumbnail: `${photo.baseUrl}=w400-h400`,
+        uploadedAt: photo.creationTime,
+        uploadedBy: 'USA Agent',
+        photoId: photo.id,
+      }));
+    } catch (error) {
+      console.error('Error searching by order number:', error);
+      return [];
+    }
+  }
 }
 
 // Export singleton instance

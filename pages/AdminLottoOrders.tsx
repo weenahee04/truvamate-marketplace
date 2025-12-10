@@ -6,7 +6,7 @@ import {
   Camera, FileText, MessageSquare, Phone, Mail, MapPin, CreditCard,
   ChevronDown, ChevronUp, RefreshCw, Send, Image, ExternalLink, Copy,
   BarChart3, Home, HardDrive, Users, Wallet, Settings, ChevronRight,
-  Trophy, Package, Banknote
+  Trophy, Package, Banknote, ScanLine
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
@@ -22,9 +22,10 @@ const MENU_SECTIONS = [
   {
     title: 'จัดการหวย',
     items: [
-      { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12', isActive: true },
+      { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12' },
       { name: 'รูปตั๋ว (Google Photos)', icon: Camera, path: '/admin/photo-upload', badge: null },
-      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: 'New' },
+      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: null },
+      { name: 'OCR สแกนตั๋ว', icon: ScanLine, path: '/admin/ocr-scanner', badge: 'New' },
     ]
   },
   {
@@ -321,7 +322,7 @@ export const AdminLottoOrders: React.FC = () => {
               )}
               <div className="space-y-1 px-3">
                 {section.items.map((item, itemIndex) => {
-                  const isActive = item.isActive || location.pathname === item.path;
+                  const isActive = (item as any).isActive || location.pathname === item.path;
                   const Icon = item.icon;
                   return (
                     <Link

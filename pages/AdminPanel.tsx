@@ -3,7 +3,7 @@ import { useGlobal } from '../context/GlobalContext';
 import { 
   LayoutDashboard, Image, Type, Save, ExternalLink, Plus, Trash2, AlertCircle,
   BarChart3, Home, Settings, Camera, HardDrive, MapPin, Ticket, Users, Wallet,
-  ChevronRight, Bell, CreditCard, DollarSign
+  ChevronRight, Bell, CreditCard, DollarSign, ScanLine
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link, useLocation } from 'react-router-dom';
@@ -23,7 +23,8 @@ const MENU_SECTIONS = [
     items: [
       { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12' },
       { name: 'รูปตั๋ว (Google Photos)', icon: Camera, path: '/admin/photo-upload', badge: null },
-      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: 'New' },
+      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: null },
+      { name: 'OCR สแกนตั๋ว', icon: ScanLine, path: '/admin/ocr-scanner', badge: 'New' },
     ]
   },
   {

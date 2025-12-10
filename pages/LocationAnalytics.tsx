@@ -6,7 +6,7 @@ import {
   MapPin, Globe, Clock, Wifi, RefreshCw, History, TrendingUp, BarChart3, 
   Home, Camera, HardDrive, Ticket, Users, Wallet, Image, CreditCard, 
   DollarSign, Settings, ChevronRight, Shield, Monitor, Smartphone, Activity,
-  Eye
+  Eye, ScanLine
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
@@ -24,7 +24,8 @@ const MENU_SECTIONS = [
     items: [
       { name: 'คำสั่งซื้อหวย', icon: Ticket, path: '/admin/lotto-orders', badge: '12' },
       { name: 'รูปตั๋ว (Google Photos)', icon: Camera, path: '/admin/photo-upload', badge: null },
-      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: 'New' },
+      { name: 'รูปตั๋ว (Google Drive)', icon: HardDrive, path: '/admin/drive-photos', badge: null },
+      { name: 'OCR สแกนตั๋ว', icon: ScanLine, path: '/admin/ocr-scanner', badge: 'New' },
     ]
   },
   {
