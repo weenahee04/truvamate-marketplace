@@ -22,6 +22,16 @@ import { Terms } from './pages/Terms';
 import { HowToUse } from './pages/HowToUse';
 import { LottoLegal } from './pages/LottoLegal';
 import { LocationAnalytics } from './pages/LocationAnalytics';
+import TicketPhotos from './pages/TicketPhotos';
+import AdminPhotoUpload from './pages/AdminPhotoUpload';
+import AdminDrivePhotos from './pages/AdminDrivePhotos';
+import AdminLottoOrders from './pages/AdminLottoOrders';
+import AdminUsers from './pages/AdminUsers';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminPayments from './pages/AdminPayments';
+import AdminPaymentSettings from './pages/AdminPaymentSettings';
+import AdminTicketPricing from './pages/AdminTicketPricing';
+import AdminSettings from './pages/AdminSettings';
 
 // Alias for better naming
 const SpecialProducts = Lotto;
@@ -84,6 +94,18 @@ const App: React.FC = () => {
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="/admin/location" element={<LocationAnalytics />} />
+            <Route path="/admin/photo-upload" element={<AdminPhotoUpload />} />
+            <Route path="/admin/drive-photos" element={<AdminDrivePhotos />} />
+            <Route path="/admin/lotto-orders" element={<AdminLottoOrders />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/payments" element={<AdminPayments />} />
+            <Route path="/admin/payment-settings" element={<AdminPaymentSettings />} />
+            <Route path="/admin/ticket-pricing" element={<AdminTicketPricing />} />
+            <Route path="/admin/settings" element={<AdminSettings />} />
+            
+            {/* Photo Routes */}
+            <Route path="/ticket-photos/:orderNumber" element={<TicketPhotos />} />
             
             <Route path="*" element={<Home />} />
           </Routes>

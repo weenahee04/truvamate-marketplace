@@ -404,31 +404,47 @@ export const Profile: React.FC = () => {
                       <p className="text-slate-500">คุณยังไม่มีสินค้าพิเศษในครอบครอง</p>
                     </div>
                   ) : (
-                    lottoOrders.flatMap(order => order.items).map((ticket: any, i: number) => (
-                      <div key={i} className="border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-brand-gold transition-colors">
-                        <div className="bg-slate-900 text-brand-gold px-4 py-2 flex justify-between items-center">
-                          <span className="font-black tracking-widest uppercase text-sm">{ticket.type || 'Powerball'}</span>
-                          <span className="text-xs font-bold text-slate-900 bg-brand-gold px-2 py-0.5 rounded">รอผลรางวัล</span>
+                    lottoOrders.map((order, orderIdx) => (
+                      <div key={orderIdx} className="space-y-4">
+                        <div className="flex justify-between items-center">
+                          <h3 className="font-bold text-slate-700">Order #{order.id}</h3>
+                          {order.status !== 'Pending' && (
+                            <button
+                              onClick={() => navigate(`/ticket-photos/${order.id}`)}
+                              className="bg-brand-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors text-sm font-medium flex items-center gap-2"
+                            >
+                              <span>📸</span>
+                              <span>ดูรูปตั๋วจริง</span>
+                            </button>
+                          )}
                         </div>
-                        <div className="p-4 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <div className="flex flex-col items-center sm:items-start gap-1">
-                            <div className="text-xs text-slate-500">งวดประจำวันที่</div>
-                            <div className="font-bold text-slate-900 text-sm">Sat, Oct 28</div>
-                          </div>
-                          <div className="flex gap-2">
-                            {ticket.numbers.map((n: number) => (
-                              <div key={n} className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center font-bold text-slate-900 shadow-sm text-sm sm:text-base">
-                                {n}
+                        {order.items.map((ticket: any, i: number) => (
+                          <div key={i} className="border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-brand-gold transition-colors">
+                            <div className="bg-slate-900 text-brand-gold px-4 py-2 flex justify-between items-center">
+                              <span className="font-black tracking-widest uppercase text-sm">{ticket.type || 'Powerball'}</span>
+                              <span className="text-xs font-bold text-slate-900 bg-brand-gold px-2 py-0.5 rounded">รอผลรางวัล</span>
+                            </div>
+                            <div className="p-4 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                              <div className="flex flex-col items-center sm:items-start gap-1">
+                                <div className="text-xs text-slate-500">งวดประจำวันที่</div>
+                                <div className="font-bold text-slate-900 text-sm">Sat, Oct 28</div>
                               </div>
-                            ))}
-                            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-red-600 text-white border-2 border-red-700 flex items-center justify-center font-bold shadow-md text-sm sm:text-base">
-                              {ticket.special}
+                              <div className="flex gap-2">
+                                {ticket.numbers.map((n: number) => (
+                                  <div key={n} className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center font-bold text-slate-900 shadow-sm text-sm sm:text-base">
+                                    {n}
+                                  </div>
+                                ))}
+                                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-red-600 text-white border-2 border-red-700 flex items-center justify-center font-bold shadow-md text-sm sm:text-base">
+                                  {ticket.special}
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <Button size="sm" variant="outline" onClick={() => setSelectedTicket({...ticket, orderId: order.id})}>ดูหลักฐานการซื้อ</Button>
+                              </div>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <Button size="sm" variant="outline" onClick={() => setSelectedTicket({...ticket, orderId: 'ORD-LOTO'})}>ดูหลักฐานการซื้อ</Button>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     ))
                   )}

@@ -521,6 +521,7 @@ export const Lotto: React.FC = () => {
         </div>
 
       </div>
+      </div>
     </>
   );
 };
