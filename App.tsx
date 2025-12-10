@@ -32,6 +32,7 @@ import AdminPayments from './pages/AdminPayments';
 import AdminPaymentSettings from './pages/AdminPaymentSettings';
 import AdminTicketPricing from './pages/AdminTicketPricing';
 import AdminSettings from './pages/AdminSettings';
+import AdminOCRScanner from './pages/AdminOCRScanner';
 
 // Alias for better naming
 const SpecialProducts = Lotto;
@@ -103,6 +104,7 @@ const App: React.FC = () => {
             <Route path="/admin/payment-settings" element={<AdminPaymentSettings />} />
             <Route path="/admin/ticket-pricing" element={<AdminTicketPricing />} />
             <Route path="/admin/settings" element={<AdminSettings />} />
+            <Route path="/admin/ocr-scanner" element={<AdminOCRScanner />} />
             
             {/* Photo Routes */}
             <Route path="/ticket-photos/:orderNumber" element={<TicketPhotos />} />
